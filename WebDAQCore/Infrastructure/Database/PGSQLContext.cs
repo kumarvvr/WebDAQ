@@ -4,18 +4,19 @@ using System.Reflection.Metadata;
 using WebDAQCore.Models;
 using Npgsql;
 using Microsoft.Extensions.Configuration;
+using WebDAQCore.Configuration;
 
 
 namespace WebDAQCore.Infrastructure.Database;
 
 public class PGSQLContext : DbContext
 {
-    private IConfiguration configuration;
+    private IConfiguration? configuration;
     public DbSet<Plant> Plants { get; set; }
 
     public PGSQLContext(IConfiguration configuration)
     {
-        this.configuration = configuration;
+        this.configuration = ConfigManager.GetConfiguration();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,6 +29,6 @@ public class PGSQLContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<Plant>().ToTable("t_plants");
+        modelBuilder.Entity<Plant>().ToTable("plants");
     }
 }
