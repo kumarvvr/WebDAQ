@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDAQClient", "WebDAQClient\WebDAQClient.csproj", "{ED2327D8-A8C9-4BAB-8539-CD9D11BB4E59}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDAQCore", "WebDAQCore\WebDAQCore.csproj", "{81164171-05E6-44E2-BC1F-9E31CA65C9C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebDAQAPI", "WebDAQAPI\WebDAQAPI.csproj", "{ED6B09CE-6C25-4B65-8470-4A9E8047C0A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDAQConsole", "WebDAQConsole\WebDAQConsole.csproj", "{85D07B2A-B82C-4BD3-AEAD-76ABA027BCCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED2327D8-A8C9-4BAB-8539-CD9D11BB4E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2327D8-A8C9-4BAB-8539-CD9D11BB4E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2327D8-A8C9-4BAB-8539-CD9D11BB4E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2327D8-A8C9-4BAB-8539-CD9D11BB4E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81164171-05E6-44E2-BC1F-9E31CA65C9C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81164171-05E6-44E2-BC1F-9E31CA65C9C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81164171-05E6-44E2-BC1F-9E31CA65C9C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81164171-05E6-44E2-BC1F-9E31CA65C9C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED6B09CE-6C25-4B65-8470-4A9E8047C0A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED6B09CE-6C25-4B65-8470-4A9E8047C0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED6B09CE-6C25-4B65-8470-4A9E8047C0A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED6B09CE-6C25-4B65-8470-4A9E8047C0A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85D07B2A-B82C-4BD3-AEAD-76ABA027BCCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D07B2A-B82C-4BD3-AEAD-76ABA027BCCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D07B2A-B82C-4BD3-AEAD-76ABA027BCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D07B2A-B82C-4BD3-AEAD-76ABA027BCCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8158283-B620-4AA7-A86D-6E27E2D58A4B}
+	EndGlobalSection
+EndGlobal

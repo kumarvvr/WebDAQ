@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Roboto;
+    src: url('Fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Pacifico;
+    src: url('Fonts/Pacifico-Regular.ttf');
+}
+
+body{
+    font-family:Roboto
+}
