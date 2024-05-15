@@ -1,5 +1,6 @@
 
 using WebDAQCore.Infrastructure.Database;
+using WebDAQCore.Services;
 
 namespace WebDAQAPI;
 
@@ -17,6 +18,7 @@ public class Program
         builder.Services.AddSwaggerGen();
 
         builder.Services.AddDbContextFactory<PGSQLContext>();
+        builder.Services.AddScoped<PlantsService>();
 
         var app = builder.Build();
 
