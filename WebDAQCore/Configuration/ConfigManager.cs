@@ -26,12 +26,9 @@ public static class ConfigManager
         {
             BuildConfig();
         }
-        else
-        {
             return configuration;
-        }
 
-        return null;
+
     }
 
     public static void ReloadConfig()
