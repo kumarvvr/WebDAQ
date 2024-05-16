@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebDAQAPI.Models;
 using WebDAQCore.Models;
 using WebDAQCore.Services;
 

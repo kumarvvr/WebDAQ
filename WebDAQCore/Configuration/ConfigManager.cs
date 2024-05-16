@@ -16,7 +16,7 @@ public static class ConfigManager
     {
         ConfigManager.configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
+            .AddJsonFile("coresettings.json", optional: true, reloadOnChange: false)
             .Build();
     }
 
