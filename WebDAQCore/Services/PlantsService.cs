@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Internal;
 using WebDAQCore.Models;
 using WebDAQCore.Infrastructure.Database;
 
+// TODO : Add validation and exceptions
 
 namespace WebDAQCore.Services;
 
@@ -31,7 +32,19 @@ public class PlantsService
         }
     }
 
-    public Guid CreateNewPlant(CreatePlantModel _plant)
+    public void UpdatePlant(UpdatePlantRecord record)
+    {
+        
+        using (var context = DbContextFactory.CreateDbContext())
+        {
+            Plant? plant = context.Plants.Find(record.id);
+            plant.name = record.Name;
+            plant.description = record.Description;
+            context.SaveChanges();
+        }
+    }
+
+    public Guid CreateNewPlant(NewPlantRecord _plant)
     {
         // Replace the ID as it should be in control of the system
         Guid id = Guid.NewGuid();

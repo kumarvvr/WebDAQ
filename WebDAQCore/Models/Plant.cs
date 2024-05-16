@@ -10,13 +10,13 @@ public class Plant
     public JsonDocument parameters { get; set; }
 }
 
-public record CreatePlantModel
+public record NewPlantRecord
 {
     public string Name { get; set; }
     public string Description { get; set; }
 }
 
-public record UpdatePlantModel
+public record UpdatePlantRecord
 {
     public Guid id { get; init; }
     public string Name { get; set; }

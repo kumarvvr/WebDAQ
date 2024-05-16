@@ -31,15 +31,17 @@ public class PlantController : ControllerBase
 
     // POST api/<PlantController>
     [HttpPost]
-    public Guid Post([FromBody] CreatePlantModel plant)
+    public Guid Post([FromBody] NewPlantRecord plant)
     {
         return plantsService.CreateNewPlant(plant);
     }
 
     // PUT api/<PlantController>/5
     [HttpPut("{id}")]
-    public void Put(int id, [FromBody] string value)
+    public void Put([FromBody] UpdatePlantRecord record)
     {
+
+        plantsService.UpdatePlant(record);
     }
 
 }
