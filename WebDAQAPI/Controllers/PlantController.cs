@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebDAQAPI.Models;
 using WebDAQCore.Models;
+using WebDAQCore.Services;
 
 namespace WebDAQAPI.Controllers;
 
@@ -8,24 +10,30 @@ namespace WebDAQAPI.Controllers;
 [ApiController]
 public class PlantController : ControllerBase
 {
-    // GET: api/<PlantController>
+    private PlantsService plantsService;
+    public PlantController(PlantsService _plantsService)
+    {
+        this.plantsService = _plantsService;
+    }
+
     [HttpGet]
     public IEnumerable<Plant> Get()
     {
-        return new string[] { "value1", "value2" };
+        return plantsService.GetAllPlants();
     }
 
-    // GET api/<PlantController>/5
+
     [HttpGet("{id}")]
-    public string Get(int id)
+    public Plant? Get(Guid id)
     {
-        return "value";
+        return plantsService.GetPlant(id);
     }
 
     // POST api/<PlantController>
     [HttpPost]
-    public void Post([FromBody] string value)
+    public Guid Post([FromBody] CreatePlantModel plant)
     {
+        return plantsService.CreateNewPlant(plant);
     }
 
     // PUT api/<PlantController>/5
@@ -34,9 +42,4 @@ public class PlantController : ControllerBase
     {
     }
 
-    // DELETE api/<PlantController>/5
-    [HttpDelete("{id}")]
-    public void Delete(int id)
-    {
-    }
 }

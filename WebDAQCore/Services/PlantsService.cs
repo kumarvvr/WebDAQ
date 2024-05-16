@@ -23,23 +23,32 @@ public class PlantsService
         }
     }
 
-    public Guid CreateNewPlant(Plant plant)
+    public Plant? GetPlant(Guid id)
+    {
+        using (var context = DbContextFactory.CreateDbContext())
+        {
+            return context.Plants.Find(id);
+        }
+    }
+
+    public Guid CreateNewPlant(CreatePlantModel _plant)
     {
         // Replace the ID as it should be in control of the system
         Guid id = Guid.NewGuid();
-        plant.id = id;
 
-        if (plant.name == null )
-            throw new Exception("Plant Name cannot be null");
-        else
+        Plant plant = new Plant();
+        plant.id = id;
+        plant.name = _plant.Name;
+        plant.description = _plant.Description;
+
+        
+        using(var context = DbContextFactory.CreateDbContext())
         {
-            using(var context = DbContextFactory.CreateDbContext())
-            {
-                context.Plants.Add(plant);  
-                context.SaveChanges();
-                return id;
-            }
+            context.Plants.Add(plant);  
+            context.SaveChanges();
+            return id;
         }
+        
 
     }
 }

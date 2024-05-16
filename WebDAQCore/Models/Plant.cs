@@ -9,3 +9,17 @@ public class Plant
     public string description { get; set; }
     public JsonDocument parameters { get; set; }
 }
+
+public record CreatePlantModel
+{
+    public string Name { get; set; }
+    public string Description { get; set; }
+}
+
+public record UpdatePlantModel
+{
+    public Guid id { get; init; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+}
+
