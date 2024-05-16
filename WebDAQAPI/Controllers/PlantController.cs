@@ -26,17 +26,18 @@ public class PlantController : ControllerBase
     [HttpGet("{id}")]
     public Plant? Get(Guid id)
     {
+        // Gets all the details of the plant
         return plantsService.GetPlant(id);
     }
 
-    // POST api/<PlantController>
+
     [HttpPost]
     public Guid Post([FromBody] NewPlantRecord plant)
     {
         return plantsService.CreateNewPlant(plant);
     }
 
-    // PUT api/<PlantController>/5
+
     [HttpPut("{id}")]
     public void Put([FromBody] UpdatePlantRecord record)
     {

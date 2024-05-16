@@ -21,5 +21,7 @@ public record UpdatePlantRecord
     public Guid id { get; init; }
     public string Name { get; set; }
     public string Description { get; set; }
+
+    public JsonDocument parameters { get; set; }
 }
 

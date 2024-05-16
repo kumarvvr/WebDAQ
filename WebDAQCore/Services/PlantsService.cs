@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using WebDAQCore.Models;
 using WebDAQCore.Infrastructure.Database;
+using System.Text.Json;
 
 // TODO : Add validation and exceptions
 
@@ -40,6 +41,7 @@ public class PlantsService
             Plant? plant = context.Plants.Find(record.id);
             plant.name = record.Name;
             plant.description = record.Description;
+            plant.parameters = record.parameters;
             context.SaveChanges();
         }
     }
@@ -53,9 +55,10 @@ public class PlantsService
         plant.id = id;
         plant.name = _plant.Name;
         plant.description = _plant.Description;
+        plant.parameters = JsonDocument.Parse("{}");
 
-        
-        using(var context = DbContextFactory.CreateDbContext())
+
+        using (var context = DbContextFactory.CreateDbContext())
         {
             context.Plants.Add(plant);  
             context.SaveChanges();
@@ -64,4 +67,6 @@ public class PlantsService
         
 
     }
+
+    
 }
